@@ -1,6 +1,6 @@
 class CreateCkeditorAssets < ActiveRecord::Migration
   def self.up
-    create_table :ckeditor_assets do |t|
+    create_table :ckeditor_asset_files do |t|
       t.string  :data_uid, :null => false
       t.string  :data_name, :null => false
       t.string  :data_mime_type
@@ -17,11 +17,11 @@ class CreateCkeditorAssets < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
-    add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+    add_index "ckeditor_asset_files", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+    add_index "ckeditor_asset_files", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   end
 
   def self.down
-    drop_table :ckeditor_assets
+    drop_table :ckeditor_asset_files
   end
 end

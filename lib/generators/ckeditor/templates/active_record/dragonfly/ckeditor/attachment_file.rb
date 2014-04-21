@@ -1,4 +1,4 @@
-class Ckeditor::AttachmentFile < Ckeditor::Asset
+class Ckeditor::AttachmentFile < Ckeditor::AssetFile
   validates_property :format, :of => :data, :in => attachment_file_types unless attachment_file_types.empty?
 
   def url_thumb

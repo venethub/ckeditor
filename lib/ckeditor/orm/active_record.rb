@@ -12,7 +12,7 @@ module Ckeditor
         module ClassMethods
           def self.extended(base)
             base.class_eval do
-              self.table_name = "ckeditor_assets"
+              self.table_name = "ckeditor_asset_files"
 
               belongs_to :assetable, :polymorphic => true
             end
